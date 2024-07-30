@@ -17,15 +17,15 @@
 ## Acesse os endspoints:
 #### Utilize a URL http://localhost:8080/clientes para realizar as seguintes operações de CRUD
 ### POST 
-> Cadastrar um cliente
+> Cadastra um cliente
 ### GET
-> Listar clientes (suporta paginação customizável)
+> Lista clientes (suporta paginação customizável)
 ### GET /{id}
 > Selecionar um cliente por id
 ### PUT
-> Atualizar um cliente
+> Atualiza um cliente
 ### DELETE /{id}
-> Excluir um cliente por id
+> Exclui um cliente por id
 ### GET /{id}/score
 > Retorna o score de crédito de um cliente
 
