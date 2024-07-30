@@ -14,7 +14,7 @@
 - Com o projeto na IDE, execute a classe _JaverApiClientApplication.java_
   ##### OU
 - Abra o terminal na pasta que está o projeto e execute o comando maven ```mvn spring-boot:run```
-## Como acessar:
+## Acesse os endspoints:
 #### Utilize a URL http://localhost:8080/clientes para realizar as seguintes operações de CRUD
 ### POST 
 > Cadastrar um cliente
