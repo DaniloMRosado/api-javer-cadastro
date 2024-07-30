@@ -3,7 +3,6 @@
 
 ## Requisitos:
 - JDK 17 instalado.
->[!TIP]
 > Configure a variável de ambiente JAVA_HOME
 - Recomenda-se o uso da mesma versão utilizada no projeto: Maven 3.9
 - Estar com o microsserviço [Data Manager](https://github.com/DaniloMRosado/javer-banco-cadastro) em execução
