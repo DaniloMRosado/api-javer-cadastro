@@ -66,7 +66,9 @@ class ClienteControllerTest {
         DadosCadastroCliente dadosCadastro = new DadosCadastroCliente("João", 123456789L, true, 1000.0F);
         DadosListagemCliente dadosListagemCliente = new DadosListagemCliente(1L, "João", 123456789L, true, 1000.0F);
         Mockito.when(this.dataManagerClient.cadastrar((DadosCadastroCliente)ArgumentMatchers.any())).thenReturn(dadosListagemCliente);
-        MockHttpServletResponse resposta = this.mvc.perform(MockMvcRequestBuilders.post("/clientes", new Object[0]).contentType(MediaType.APPLICATION_JSON).content(this.dadosCadastroClienteJson.write(dadosCadastro).getJson())).andReturn().getResponse();
+
+        MockHttpServletResponse resposta = this.mvc.perform(
+                MockMvcRequestBuilders.post("/clientes", new Object[0]).contentType(MediaType.APPLICATION_JSON).content(this.dadosCadastroClienteJson.write(dadosCadastro).getJson())).andReturn().getResponse();
         String jsonEsperado = this.dadoslistagemClienteJson.write(dadosListagemCliente).getJson();
         Assertions.assertThat(resposta.getStatus()).isEqualTo(HttpStatus.CREATED.value());
         Assertions.assertThat(resposta.getContentAsString(StandardCharsets.UTF_8)).isEqualTo(jsonEsperado);
@@ -117,7 +119,7 @@ class ClienteControllerTest {
     public void excluirCliente() throws Exception {
         Long id = 1L;
         ((DataManagerClient)Mockito.doNothing().when(this.dataManagerClient)).deletar(ArgumentMatchers.anyLong());
-        this.mvc.perform(MockMvcRequestBuilders.delete("/clientes/" + id, new Object[0])).andExpect(MockMvcResultMatchers.status().isOk());
+        this.mvc.perform(MockMvcRequestBuilders.delete("/clientes/" + id)).andExpect(MockMvcResultMatchers.status().isOk());
     }
 
     @Test
@@ -125,7 +127,7 @@ class ClienteControllerTest {
         Long id = 48L;
         DadosListagemCliente cliente = new DadosListagemCliente(id, "Tiago", 33333333L, true, 2500.8F);
         Mockito.when(this.dataManagerClient.getById(id)).thenReturn(cliente);
-        String resposta = this.mvc.perform(MockMvcRequestBuilders.get("/clientes/" + id, new Object[0])).andExpect(MockMvcResultMatchers.status().isOk()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
+        String resposta = this.mvc.perform(MockMvcRequestBuilders.get("/clientes/" + id)).andExpect(MockMvcResultMatchers.status().isOk()).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
         Assertions.assertThat(resposta).isEqualTo(this.dadoslistagemClienteJson.write(cliente).getJson());
     }
 
