@@ -6,4 +6,6 @@
 - Instalar Maven 3.9 (versão utilizado na projeto)
 - Estar com o microsserviço [Data Manager](https://github.com/DaniloMRosado/javer-banco-cadastro) em execução
 ## Como executar a aplicação:
-#### Para executar a aplicação, você pode baixar o arquivo zip, descompactá-lo e então abrir na IDE de sua preferência 
+1. ### Baixar o projeto :inbox_tray:
+     - Fazer o download do arquivo ZIP deste repositório ou clonar utilizando ```git clone ```para uma pasta 
+, descompactá-lo e então abrir na IDE de sua preferência. 
