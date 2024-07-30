@@ -1,4 +1,4 @@
-# API de Cadastro Banco Javer
+# API Cadastro de Clientes do Banco Javer
 #### Esta aplicação permite realizar um CRUD de clientes do banco Javer e um endpoint adicional para o cálculo do score de crédito. Ela se comunica com outro microsserviço [(Data Manager)](https://github.com/DaniloMRosado/javer-banco-cadastro) que persistirá os dados no MySQL.
 
 # Requisitos:
@@ -19,7 +19,7 @@
 ### POST 
 > Cadastrar um cliente
 ### GET
-> Listar clientes
+> Listar clientes (suporta paginação customizável)
 ### GET /{id}
 > Selecionar um cliente por id
 ### PUT
