@@ -15,4 +15,5 @@
   ##### OU
 - Abra o terminal na pasta que está o projeto e execute o comando maven ```mvn spring-boot:run```
 ## Como acessar:
-
+#### As operações de CRUD estão todas apontadas para a URL http://localhost:8080/clientes, sendo possível utilizar os seguintes métodos de requisição HTTP
+### GET
