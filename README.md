@@ -29,3 +29,6 @@
 ### GET /{id}/score
 > Retorna o score de crédito de um cliente
 
+### Para mais informações sobre como enviar dados a API, acesse a documentação 
+http://localhost:8080/swagger-ui/index.html
+
