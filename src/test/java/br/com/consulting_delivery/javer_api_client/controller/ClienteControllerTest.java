@@ -143,7 +143,7 @@ class ClienteControllerTest {
         respostaEsperada.put("id", 48);
         String respostaRequisicao = this.mvc.perform(MockMvcRequestBuilders.get("/clientes/" + id + "/score", new Object[0])).andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
         JsonNode respostaRequisicaoNode = this.mapper.readTree(respostaRequisicao);
-        HashMap clientesResposta = (HashMap)this.mapper.readValue(respostaRequisicaoNode.toString(), HashMap.class);
+        HashMap clientesResposta = this.mapper.readValue(respostaRequisicaoNode.toString(), HashMap.class);
         Assertions.assertThat(respostaEsperada).isEqualTo(clientesResposta);
     }
 }

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 @Service
 @FeignClient(
         value = "data-manager",
-        url = "localhost:8090",
+        url = "${spring.cloud.openfeign.client.config.data-manager.url}:8090",
         configuration = {ExceptionConfiguration.class},
         path = "/clientes"
 )
