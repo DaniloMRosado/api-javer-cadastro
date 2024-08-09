@@ -65,7 +65,7 @@ public class ClienteController {
     @GetMapping("/{id}/score")
     public ResponseEntity<?> getScoreCredito(@PathVariable Long id) {
         DadosListagemCliente cliente = this.dataManagerClient.getById(id);
-        Float score = this.servicoCliente.calcularScoreCredito(cliente.saldo_cc());
+        Float score = this.servicoCliente.calcularScoreCredito(cliente.saldoCc());
         HashMap<Object, Object> resposta = new HashMap<>();
         resposta.put("Score crédito", score);
         resposta.put("id", id);

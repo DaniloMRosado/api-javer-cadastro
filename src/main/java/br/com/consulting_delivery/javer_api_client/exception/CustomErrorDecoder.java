@@ -6,6 +6,7 @@ import feign.codec.ErrorDecoder;
 import jakarta.persistence.EntityNotFoundException;
 
 public class CustomErrorDecoder implements ErrorDecoder {
+
     public CustomErrorDecoder() {
     }
 

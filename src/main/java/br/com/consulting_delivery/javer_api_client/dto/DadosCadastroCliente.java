@@ -14,7 +14,7 @@ public record DadosCadastroCliente(
         Boolean correntista,
 
         @NotNull(message = "Insira um saldo inicial")
-        Float saldo_cc) {
+        Float saldoCc) {
 
 
 
