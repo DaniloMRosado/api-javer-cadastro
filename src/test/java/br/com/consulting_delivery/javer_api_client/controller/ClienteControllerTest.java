@@ -72,8 +72,8 @@ class ClienteControllerTest {
 
     @Test
     public void clienteCadastradoComSucesso() throws Exception {
-        DadosCadastroCliente dadosCadastro = new DadosCadastroCliente("João", 123456789L, true, 1000.0F);
-        DadosListagemCliente dadosListagemCliente = new DadosListagemCliente(1L, "João", 123456789L, true, 1000.0F);
+        DadosCadastroCliente dadosCadastro = new DadosCadastroCliente("João", 123456789L, true, 1000.0F, "123456789");
+        DadosListagemCliente dadosListagemCliente = new DadosListagemCliente(1L, "João", 123456789L, true, 1000.0F, "123456789");
 
         Mockito.when(this.dataManagerClient.cadastrar(ArgumentMatchers.any())).thenReturn(dadosListagemCliente);
 
@@ -109,8 +109,8 @@ class ClienteControllerTest {
     @Test
     public void listarClientesConformePaginacao() throws Exception {
         List<DadosListagemCliente> clientes = new ArrayList<>();
-        clientes.add(new DadosListagemCliente(1L, "João", 123456789L, true, 1000.0F));
-        clientes.add(new DadosListagemCliente(2L, "Maria", 98989898923L, true, 8000.0F));
+        clientes.add(new DadosListagemCliente(1L, "João", 123456789L, true, 1000.0F, "123456789"));
+        clientes.add(new DadosListagemCliente(2L, "Maria", 98989898923L, true, 8000.0F, "123456789"));
 
         Page<DadosListagemCliente> page = new PageImpl<>(clientes);
 
@@ -133,7 +133,7 @@ class ClienteControllerTest {
     public void atualizarCliente() throws Exception {
 
         DadosAtualizacaoCliente dadosAtualizacao = new DadosAtualizacaoCliente(48L, (String)null, (Long)null, (Boolean)null, 2500.8F);
-        DadosListagemCliente clienteAtualizado = new DadosListagemCliente(48L, "Tiago", 33333333L, true, 2500.8F);
+        DadosListagemCliente clienteAtualizado = new DadosListagemCliente(48L, "Tiago", 33333333L, true, 2500.8F, "123456789");
 
         Mockito.when(this.dataManagerClient.atualizar(ArgumentMatchers.any(DadosAtualizacaoCliente.class))).thenReturn(clienteAtualizado);
 
@@ -152,7 +152,7 @@ class ClienteControllerTest {
     @Test
     public void retornarClientePorId() throws Exception {
         Long id = 48L;
-        DadosListagemCliente cliente = new DadosListagemCliente(id, "Tiago", 33333333L, true, 2500.8F);
+        DadosListagemCliente cliente = new DadosListagemCliente(id, "Tiago", 33333333L, true, 2500.8F, "123456789");
 
         Mockito.when(this.dataManagerClient.getById(id)).thenReturn(cliente);
 
@@ -167,7 +167,7 @@ class ClienteControllerTest {
     public void retornarScoreCredito() throws Exception {
         Long id = 48L;
 
-        DadosListagemCliente cliente = new DadosListagemCliente(id, "Tiago", 33333333L, true, 2500.8F);
+        DadosListagemCliente cliente = new DadosListagemCliente(id, "Tiago", 33333333L, true, 2500.8F, "123456789");
         Float scoreEsperado = cliente.saldoCc() * 0.1F;
 
         Mockito.when(this.dataManagerClient.getById(id)).thenReturn(cliente);

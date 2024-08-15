@@ -15,6 +15,11 @@ public class ConfiguracaoSpringDoc {
 
     @Bean
     public OpenAPI customOpenAPI() {
-        return (new OpenAPI()).components((new Components()).addSecuritySchemes("bearer-key", (new SecurityScheme()).type(Type.HTTP).scheme("bearer").bearerFormat("JWT"))).info((new Info()).title("Javer Banco API").description("API Rest da aplicação Javer Data Manager, contendo as funcionalidades de CRUD de clientes"));
+        return (new OpenAPI())
+                .components((new Components())
+                        .addSecuritySchemes("bearer-key",
+                                (new SecurityScheme()).type(Type.HTTP)
+                                        .scheme("bearer").bearerFormat("JWT")))
+                .info((new Info()).title("Javer Banco API").description("API Rest da aplicação Javer Data Manager, contendo as funcionalidades de CRUD de clientes"));
     }
 }

@@ -4,7 +4,8 @@ public record DadosListagemCliente(
         Long id, String nome,
         Long telefone,
         Boolean correntista,
-        Float saldoCc) {
+        Float saldoCc,
+        String cpf) {
 
 
 }
